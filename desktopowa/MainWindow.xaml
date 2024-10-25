@@ -1,0 +1,51 @@
+﻿<Window x:Class="desktopowa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:desktopowa"
+        mc:Ignorable="d"
+        Title="Nadaj przesyłkę PESEL: 00000000000" Height="450" Width="800">
+    <StackPanel Margin="20">
+        <StackPanel HorizontalAlignment="Left" Margin="50, 30">
+            <GroupBox Width="200" Height="110"  Padding="5" >
+                <GroupBox.Header>
+                    Rodzaj przesyłki
+                </GroupBox.Header>
+
+                <StackPanel>
+                    <RadioButton Content="Pocztówka" GroupName="rodzaj" IsChecked="True" Margin="5"/>
+                    <RadioButton Content="List" GroupName="rodzaj" Margin="5"/>
+                    <RadioButton Content="Paczka" GroupName="rodzaj" Margin="5"/>
+                </StackPanel>
+            </GroupBox>
+            <Button Content="Sprawdź Cenę" Click="SprawdzCeneKlik" Margin="0, 5"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Image Source="pocztowka.png" Width="100" HorizontalAlignment="Left" Margin="0,5"/>
+
+                <Label Content="Cena: " FontWeight="Bold" Margin="0,5,0,0" FontSize="16" Width="50"/>
+                <Label x:Name="cenaLbl" FontWeight="Bold" Margin="0,5" FontSize="16"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right" Margin="30, -245" Width="300">
+            <GroupBox>
+                <GroupBox.Header>Dane adresowe</GroupBox.Header>
+
+                <StackPanel>
+                    <Label Content="Ulica z numerem"/>
+                    <TextBox x:Name="ulica"/>
+
+                    <Label Content="Kod pocztowy"/>
+                    <TextBox x:Name="kodPocztowy"/>
+
+                    <Label Content="Miasto"/>
+                    <TextBox x:Name="miasto"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <Button Content="Zatwierdź" Click="ZatwierdzKlik" Margin="0"/>
+    </StackPanel>
+</Window>
